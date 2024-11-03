@@ -45,11 +45,13 @@
         </dependency>
 
         <!-- H2 Database -->
+        <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <version>2.3.232</version>
         </dependency>
+
 
         <!-- Spring Boot Test (for unit testing) -->
         <dependency>
@@ -58,12 +60,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.34</version>
             <scope>provided</scope>
         </dependency>
+
 
         <dependency>
             <groupId>io.springfox</groupId>

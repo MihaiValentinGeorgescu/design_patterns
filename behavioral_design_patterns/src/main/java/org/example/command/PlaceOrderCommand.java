@@ -1,18 +1,26 @@
-
 package org.example.command;
 
-import org.example.Order;
+import org.example.CustomerOrder; // Import your CustomerOrder entity
+import org.example.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class PlaceOrderCommand implements OrderCommand {
-    private final Order order;
+@Component // This annotation makes the class a Spring-managed bean
+public class PlaceOrderCommand {
+    private final OrderRepository orderRepository;
 
-    public PlaceOrderCommand(Order order) {
-        this.order = order;
+    // Constructor injection with @Autowired
+    @Autowired
+    public PlaceOrderCommand(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
     }
 
-    @Override
-    public void execute() {
-        // TODO: Implement order placement logic
-        System.out.println("Order placed successfully: " + order.getId());
+    public void execute(String customerName, Integer quantity, String status, Double totalAmount) {
+        CustomerOrder order = new CustomerOrder();
+        order.setCustomerName(customerName);
+        order.setQuantity(quantity);
+        order.setStatus(status);
+        order.setTotalAmount(totalAmount);
+        orderRepository.save(order); // Save order to the repository
     }
 }

@@ -1,7 +1,7 @@
 
 package org.example.handler;
 
-import org.example.Order;
+import org.example.CustomerOrder;
 
 public abstract class OrderValidationHandler {
     protected OrderValidationHandler next;
@@ -10,7 +10,7 @@ public abstract class OrderValidationHandler {
         this.next = next;
     }
 
-    public void validate(Order order) {
+    public void validate(CustomerOrder order) {
         if (next != null) {
             next.validate(order);
         }
