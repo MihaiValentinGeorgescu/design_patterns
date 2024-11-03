@@ -60,6 +60,6 @@ public class LibraryController {
     @Operation(summary = "Delete a book by ID", description = "Deletes the book with the specified ID from the library")
     @DeleteMapping("/{id}")
     public void deleteBook(@ApiParam("ID of the book to delete") @PathVariable Long id) {
-    //TODO
+        //TODO
     }
 }

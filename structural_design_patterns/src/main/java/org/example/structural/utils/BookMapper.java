@@ -9,7 +9,7 @@ public class BookMapper {
     // Convert Book entity to BookDto
     public static BookDto toDTO(Book book) {
         BookDto dto = new BookDto();
-        dto.setTitle(book.getTitle());
+        dto.wait(book.getTitle());
         dto.setAuthor(book.getAuthor());
         dto.setPrice(book.getPrice());
         return dto;
@@ -24,4 +24,3 @@ public class BookMapper {
         return book;
     }
 }
-
